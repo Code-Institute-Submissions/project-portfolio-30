@@ -51,6 +51,15 @@ Powdery mildews usually have narrow host ranges comprising of just a few related
 * The training data to fit the model come from the dataset provided by the Code Institute and saved to this [Kaggle dataset directory](https://www.kaggle.com/codeinstitute/cherry-leaves). This dataset contains 4208 images for quicker model training.
 	* Train data - target: infected or not; features: all images
 
+## Agile Methodology and CRISP-DM Workflow
+
+THe agile methodolody and CRISP-DM workflow were used in planning and developing this project.
+
+The CRISP-DM workflow was used to delve deeper into the business requirements of the client and improve our compliance with business understanding. That and the further steps of data understanding and preparation, modelling, evaluation and deplyment; were broken down into milestones on Github projects. Issues related to the project development and business requirements were then assigned to fdacilitate the relevant milestone.
+
+Please view the Github projects board [here](https://github.com/users/StephenB92/projects/5/views/1).
+
+
 ## Dashboard Design
 
 
