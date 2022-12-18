@@ -43,7 +43,7 @@ Powdery mildews usually have narrow host ranges comprising of just a few related
 * We want an ML model to predict if a leaf shows signs/marks of mildew or not, based on historical image data. It is a supervised model, a 2-class, single-label, classification model.
 * Our ideal outcome is to provide the employes of Farmy & Foods a faster and more reliable diagnostic for powdery mildew detection.
 * The model success metrics are
-	* Accuracy of 100% on the test set.
+	* Accuracy of 99% or more on the test set.
 * The model output is defined as a flag, indicating if the leaf shows powdery mildew or not and the associated probability of being infected or not. The employees will take pictures of cherry leaves and upload the pictures to the App. The prediction is made on the fly (not in batches).
 * Heuristics: The current procedure requires an experienced employee to carry out a time-consuming manual process inspection to distinguish infected and uninfected leaves. Visual criteria are used to detect mildew fungus. It leaves room to produce inaccurate diagnostics due to human error. On top of that, it will save the employess of Farmy & Foods a great amount of time by eliminating the need for manual process inspection. Rather, a picture of the leaf is taken and uploaded to the App and the App distinguishes between infected and uninfected leaves. 
 * The training data to fit the model come from the dataset provided by the Code Institute and saved to this [Kaggle dataset directory](https://www.kaggle.com/codeinstitute/cherry-leaves). This dataset contains 4208 images for quicker model training.
