@@ -46,10 +46,11 @@ Powdery mildews usually have narrow host ranges comprising of just a few related
 * Our ideal outcome is to provide the employes of Farmy & Foods a faster and more reliable diagnostic for powdery mildew detection.
 * The model success metrics are
 	* Accuracy of 99% or more on the test set.
-* The model output is defined as a flag, indicating if the leaf shows powdery mildew or not and the associated probability of being infected or not. The employees will take pictures of cherry leaves and upload the pictures to the App. The prediction is made on the fly (not in batches).
-* Heuristics: The current procedure requires an experienced employee to carry out a time-consuming manual process inspection to distinguish infected and uninfected leaves. Visual criteria are used to detect mildew fungus. It leaves room to produce inaccurate diagnostics due to human error. On top of that, it will save the employess of Farmy & Foods a great amount of time by eliminating the need for manual process inspection. Rather, a picture of the leaf is taken and uploaded to the App and the App distinguishes between infected and uninfected leaves. 
+* The model output indicates if the leaf shows powdery mildew or not and the associated probability of being infected or not. The employees will take pictures of cherry leaves and upload the pictures to the App. The prediction is made on the fly (not in batches).
+* Heuristics:  Currently, the process is manual verification if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If there is powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute. Visual criteria are used to detect mildew fungus. This process is time-consuming and still leaves room for human error. We aim to build a Machine Learning model to save the employess of Farmy & Foods a great amount of time by eliminating the need for manual process inspection. Rather, a picture of the leaf is taken and uploaded to the App and the App distinguishes between infected and uninfected leaves. 
 * The training data to fit the model come from the dataset provided by the Code Institute and saved to this [Kaggle dataset directory](https://www.kaggle.com/codeinstitute/cherry-leaves). This dataset contains 4208 images for quicker model training.
 	* Train data - target: infected or not; features: all images
+	* It is worth noting that when evaluating the average image shape in Jupyter Notebook 02 - Data Visualisation, an unusual scatterplot was produced. As the scatterplot was to display the image shapes and highlight the average/mean image size, it was strange that all plots on the scatterplot were focused in the middle. After further investigation into the provided dataset and printing the image shapes as integers, I found that the dataset images were in fact all the exact same size. This of course is preferrable from the clients perspective, as it allows for faster and more accurate model training and therefore, higher prediction accuracy.
 
 ## Agile Methodology and CRISP-DM Workflow
 
@@ -150,6 +151,7 @@ No bugs were encountered during development of this project.
 * Kaggle is used in conjunction with the kaggle.json file to download the project dataset.
 * Zipfile is used to extract the dataset image files from the file downloaded from Kaggle.
 * Shutil is used to split the dataset images into the train, test and validation directories at the specified ratios.
+* Streamlit is used to create and customise the project dashboard.
 * Joblib is used to save ML prediction metrics and data visualisation plots.
 * Pandas is used for analysing the collected dataset, including performing statstical analysis.
 * Matplotlib is used for data visualisation and creating plots in jupyter notebooks.
