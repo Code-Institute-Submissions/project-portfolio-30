@@ -8,10 +8,9 @@ def page_summary_body():
 
     st.info(
         f"**General Information**\n"
-        f"* According to [RHS](https://www.rhs.org.uk/disease/powdery-mildews), Powdery mildew is a fungal disease of the foliage,"
-        f"stems and occasionally flowers and fruit where a "
-        f"superficial fungal growth covers the surface of the plant.\n"
-        f"* A photograph of a cherry leaf is taken and examined. "
+        f"* The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry planatations have been presenting "
+        f"powdery mildew, which is a fungal disease of the foliage.\n"
+        f"* An employee takes a photograph of the cherry leaf and uploads it to the app. "
         f"Visual criteria are used to detect mildew fungus, as mildew infected "
         f"leaves, will appear to have been dusted with flour.\n"
         f"**Project Dataset**\n"
@@ -32,3 +31,5 @@ def page_summary_body():
         f"a healthy cherry leaf from one with powdery mildew. \n"
         f"* 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew. "
         )
+
+        

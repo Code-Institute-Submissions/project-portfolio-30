@@ -60,31 +60,55 @@ The CRISP-DM workflow was used to delve deeper into the business requirements of
 
 Please view the Github projects board [here](https://github.com/users/StephenB92/projects/5/views/1).
 
+## Jupyter Notebook Architecture and flow
+
+### Three separate Jupyter Notebooks were used for various stages of development
+
+1. Notebook 1 - Data Collection
+
+![Data Collection Flowchart](documentation/notebook_flowcharts/notebook01_data_collection.png)
+
+2. Notebook 2 - Data Visualisation
+
+![Data Visualisation Flowchart](documentation/notebook_flowcharts/notebook02_data_visualisation.png)
+
+3. Notebook 3 - Modelling and Evaluation
+
+![Modelling and Evaluation Flowchart](documentation/notebook_flowcharts/notebook03_modelling_and_evaluation.png)
 
 ## Dashboard Design
 #### Page 1: Quick Project Summary
 * Quick project summary
 	* General Information
-		* According to RHS, Powdery mildew is a fungal disease of the foliage, stems and occasionally flowers and fruit where a superficial fungal growth covers the surface of the plant.
-		* Many common edible and ornamental garden plants are affected including apples, blackcurrants, gooseberries, grapes, crucifers, courgettes, marrows, cucumbers, peas, grasses (the powdery mildew fungi are major pathogens of cereal crops), Acanthus, delphiniums, phlox, many ornamentals in the daisy family, Lonicera (honeysuckle), rhododendrons and azaleas, roses and Quercus robur (English oak).
-		* Powdery mildews usually have narrow host ranges consisting of just a few related plants. For example, the powdery mildew affecting peas is a different species from the one attacking apples.
-		* In this project, we will be examining cherry leaves. Cherry leaves that are infected with powdery 
-		mildew fungus will appear to have been dusted with flour.
-
+		* The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry planatations have been presenting powdery mildew, which is a fungal disease of the foliage.
+        * An employee takes a photograph of the cherry leaf and uploads it to the app. Visual criteria are used to detect mildew fungus, as mildew infected leaves, will appear to have been dusted with flour.
 	* Project Dataset
-		* The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
+        * The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
-	* Link to additional information [Readme file](https://github.com/StephenB92/project-portfolio-5/blob/main/README.md)
+	* Link to additional information Readme file.
 	
 	* Business requirements
 		* The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
 		* The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
- 
+
+![Summary Page Screenshot](documentation/dashboard_screenshots/summary_page.png)
+
 #### Page 2: Cherry Leaf Visualizer
 * Satisfies business requirement 1 - A study to visually differentiate a healthy cherry leaf from one with powdery mildew
-	* Checkbox 1 - Difference between average and variability image.
-	* Checkbox 2 - Differences between average powdery mildew infected and average healthy leaves.
-	* Checkbox 3 - Image Montage.
+
+![Visualiser Page Screenshot](documentation/dashboard_screenshots/visualisation_page.png)
+
+* Checkbox 1 - Difference between average and variability image.
+
+![Visualiser Average and Variability Screenshot](documentation/dashboard_screenshots/visualisation_diff_average_variability.png)
+
+* Checkbox 2 - Differences between average powdery mildew infected and average healthy leaves.
+
+![Visualiser Difference Screenshot](documentation/dashboard_screenshots/visualisation_diff.png)
+
+* Checkbox 3 - Image Montage.
+
+![Visualiser Montage Screenshot](documentation/dashboard_screenshots/visualisation_montage.png)
 
 #### Page 3: Mildew Detection
 * Business requirement two information - "The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew."
@@ -93,15 +117,24 @@ Please view the Github projects board [here](https://github.com/users/StephenB92
 * Table with the image name and prediction results.
 * Download button to download table.
 
+![Detection Page Screenshot](documentation/dashboard_screenshots/mildew_detection.png)
+
+![Detection Healthy Screenshot](documentation/dashboard_screenshots/detection_healthy.png)
+
+![Detection Mildew Screenshot](documentation/dashboard_screenshots/detection_mildew.png)
+
 #### Page 4: Project Hypothesis and Validation
 * I suspect that leaves affected by powdery mildew will show clear marks/signs. Typically, leaves infected with mildew will have clear powdery patches of fungus, thereby making the leaves appear as if they have been dusted with flour. Whereas healthy leaves will be light green in colour.
 * Average Image, Variability Image and Difference between Averages studies did not reveal any clear pattern to differentiate one from another."
+
+![Hypothesis Page Screenshot](documentation/dashboard_screenshots/hypothesis_page.png)
 
 #### Page 5: ML Prediction Metrics
 * Label Frequencies for Train, Validation, and Test Sets
 * Model History - Accuracy and Losses
 * Model evaluation result
 
+![Performance Page Screenshot](documentation/dashboard_screenshots/performance_page.png)
 
 ## Fixed Bugs
 No bugs were encountered during development of this project.
