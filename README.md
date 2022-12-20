@@ -14,7 +14,7 @@ To save time in this process, the IT team suggested an ML system that detects in
 * 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
 * 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
-Please view the deployed app [here](https://project-portfolio-five.herokuapp.com/).
+## Please view the deployed app [here](https://project-portfolio-five.herokuapp.com/).
 
 ### What is powdery mildew?
 
@@ -23,6 +23,7 @@ According to [RHS](https://www.rhs.org.uk/disease/powdery-mildews), Powdery mild
 Many common edible and ornamental garden plants are affected including apples, blackcurrants, gooseberries, grapes, crucifers, courgettes, marrows, cucumbers, peas, grasses (the powdery mildew fungi are major pathogens of cereal crops), Acanthus, delphiniums, phlox, many ornamentals in the daisy family, Lonicera (honeysuckle), rhododendrons and azaleas, roses and Quercus robur (English oak).
 
 Powdery mildews usually have narrow host ranges comprising of just a few related plants. For example, the powdery mildew affecting peas is a different species from the one attacking apples.
+
 
 ## Hypothesis and how to validate?
 * I suspect that leaves affected by powdery mildew will show clear marks/signs. Typically, leaves infected with mildew will have clear powdery patches of fungus, thereby making the leaves appear as if they have been dusted with flour. Whereas healthy leaves will be light green in colour.
@@ -56,23 +57,35 @@ Powdery mildews usually have narrow host ranges comprising of just a few related
 
 THe agile methodolody and CRISP-DM workflow were used in planning and developing this project.
 
-The CRISP-DM workflow was used to delve deeper into the business requirements of the client and improve our compliance with business understanding. That and the further steps of data understanding and preparation, modelling, evaluation and deplyment; were broken down into milestones on Github projects. Issues related to the project development and business requirements were then assigned to fdacilitate the relevant milestone.
+The CRISP-DM workflow was used to delve deeper into the business requirements of the client and improve our compliance with business understanding. That and the further steps of data understanding and preparation, modelling, evaluation and deployment; were broken down into milestones on Github projects. Issues related to the project development and business requirements were then assigned to fdacilitate the relevant milestone.
 
 Please view the Github projects board [here](https://github.com/users/StephenB92/projects/5/views/1).
 
-## Jupyter Notebook Architecture and flow
+## Jupyter Notebook Architecture and Flow
 
 ### Three separate Jupyter Notebooks were used for various stages of development
 
 1. Notebook 1 - Data Collection
 
+* The purpose of this notebook is to fetch data from Kaggle and prepare it for further processes. We start by copying our kaggle.json file to the workspace. Then, the required libraries are imported and the working directory is set. This notebook includes a cell that deletes the "cherry-leaves" folder (see "Fixed Bugs" section of the README below). Next, it installs kaggle to download the project dataset. Finally it runs functions to remove non-image files and then, split them into the train, test and validation sets.
+* This notebook must be run each time a new workspace is opened, as the dataset is not committed to the project repository as doing so would lead to bloating the repository.
+
 ![Data Collection Flowchart](documentation/notebook_flowcharts/notebook01_data_collection.png)
 
 2. Notebook 2 - Data Visualisation
 
+* The purpose of this notebook is to answer business requirement 1: a study to visually differentiate a leaf infected with powdery mildew fungus and a healthy leaf. We start by importing the libraries to manipulate data and create plots. We then set the working, input and output directories, along with the label names. The train, test and validation sets created in the previous notebook are used as the inputs. 
+* The notebook then analyses the data to discern the image shape, which is later used in the next notebook for modelling. Next, the notebook performs data visualisation tasks. It calculates the average and variability of images per label, the difference between average mildew fungus infected and average healthy cherry leaf images and finally, creates an image montage. These tasks answer business requirement 1 and are later displayed on the Streamlit dashboard.
+* It is not necessary to run this notebook each time a workspace is opened, as our dataset in this project does not change day to day. It is worth noting that, typically in practice, the data collection and visualistion notebooks would be run each time a new workspace is opened. This is because the data you are working with would generally change day to day.
+
 ![Data Visualisation Flowchart](documentation/notebook_flowcharts/notebook02_data_visualisation.png)
 
 3. Notebook 3 - Modelling and Evaluation
+
+* The purpose of this notebook is to create a machine learning model that will answer business requirement 2: tell whether a given leaf is infected with powdery mildew or not. We start by importing the libraries to manipulate data and create plots. We then set the working, input and output directories, along with the label names. The train, test and validation sets created in the data collection notebook are used as the inputs, along with the image shape created in the data visualisation notebook. 
+* First, the notebook calculates and plots the number of images in the train, test and validation data. Next, in order to assist with model training, the notebook performs image data augmentation and plots the results. The class indices are then saved for each dataset. These are used later in the notebook to predict on unseen data.  
+* Next, the machine learning model is created. The required packages are imported and the model is created with layers to assist with analysing image data by highlighting distinctive features. We include a dropout layer and early stopping to prevent overfitting. The model is then fitted to the train and validation data and saved. The notebook then evaluates and plots the model's performance and then evaluates it against the test set. These performance metrics are displayed on the Streamlit dashboard.
+* Finally, code is written to predict on new data, also using the class indices from earlier. This task answers business requirement 2 and can be used on the Streamlit dashboard also.
 
 ![Modelling and Evaluation Flowchart](documentation/notebook_flowcharts/notebook03_modelling_and_evaluation.png)
 
@@ -137,7 +150,7 @@ Please view the Github projects board [here](https://github.com/users/StephenB92
 ![Performance Page Screenshot](documentation/dashboard_screenshots/performance_page.png)
 
 ## Fixed Bugs
-No bugs were encountered during development of this project.
+* At an early stage of this project, the train and test datasets were included in the .gitignore file, however the validation set was not. This resulted in the "cherry-leaves" directory remaining in the workspace also. This was an issue as when the "run all" button is clicked on the Data Collection notebook, the process would stop and an error would be triggered once it reached the cell used to download the dataset. This is because a portion of the data to be downloaded already exists, along with it's directory. As this notebook needs to be run each time a workspace is opened, it is much more user friendly and efficient to just click the "run all" button, rather than each cell individually. Furthermore, as the validation set had already been committed to this projects repository, I was unable to remove it without altering the projects git commit history. Rather than altering the project commit history or requiring the "cherry-leaves" folder to be manually deleted each time the workspace is opened, a solution was created. I added a cell that imports shutil earlier in the notebook and then uses it to delete the "cherry-leaves" directory, before the full dataset is downloaded. Now, when a new workspace is opened and the run all button is clicked in the Data Collection, this notebook automatically runs in it's entirety with no errors.  
 
 ## Deployment - Heroku
 
@@ -198,6 +211,13 @@ No bugs were encountered during development of this project.
 
 ## Credits 
 * Credit to Code Institute's [Malaria Detector Walkthrough Project](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/07a3964f7a72407ea3e073542a2955bd/29ae4b4c67ed45a8a97bb9f4dcfa714b/), which was used as a guide and template during development of this project.
+* Credit to the [Pandas Documentation](https://pandas.pydata.org/docs/).
+* Credit to the [Matplotib Documentation](https://matplotlib.org/stable/index.html).
+* Credit to the [Scikit-learn Documentation](https://scikit-learn.org/stable/).
+* Credit to the [Seaborn Documentation](https://seaborn.pydata.org/).
+* Credit to the [Tensorflow Documentation](https://www.tensorflow.org/?gclid=Cj0KCQiA14WdBhD8ARIsANao07jdpeMhBonZ05pNyzY8lp73O_ZirE4Ehlz_Qlhm-qeg1kbPabqLFmYaApokEALw_wcB).
+* Credit to the [Keras Documentation](https://keras.io/).
+* Credit to the [Streamlit Documentation](https://docs.streamlit.io/).
 
 ### Content 
 * Credit to [RHS](https://www.rhs.org.uk/disease/powdery-mildews) and [Almanac](https://www.almanac.com/pest/powdery-mildew) for information on powdery mildew and how to identify it.

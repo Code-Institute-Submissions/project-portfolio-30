@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 # Credit to to the Code Institute "Malaria Detector" walkthrough project
 def page_summary_body():
 
-    st.write("### Quick Project Summary")
+    st.header("Quick Project Summary")
 
     st.info(
         f"**General Information**\n"
@@ -13,15 +13,18 @@ def page_summary_body():
         f"* An employee takes a photograph of the cherry leaf and uploads it to the app. "
         f"Visual criteria are used to detect mildew fungus, as mildew infected "
         f"leaves, will appear to have been dusted with flour.\n"
+        )
+
+    st.info(
         f"**Project Dataset**\n"
         f"* The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy "
         f"cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. "
         f"The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned "
-        f"about supplying the market with a compromised quality product.\n\n"
-        )
+        f"about supplying the market with a compromised quality product.\n"
+    )
 
     st.write(
-        f"* For additional information, please visit and **read** the "
+        f"For additional information, please visit and **read** the "
         f"[Project README file](https://github.com/StephenB92/project-portfolio-5/blob/main/README.md).")
     
 

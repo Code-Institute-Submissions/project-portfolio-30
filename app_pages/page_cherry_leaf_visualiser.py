@@ -11,7 +11,7 @@ import random
 
 # Credit to to the Code Institute "Malaria Detector" walkthrough project
 def page_cherry_leaf_visualiser_body():
-    st.write("### Cherry Leaf Visualizer")
+    st.header("Cherry Leaf Visualizer")
     st.info(
         f"* The client is interested in conducting a study to visually "
         f"differentiate a healthy cherry leaf from one with powdery mildew.")

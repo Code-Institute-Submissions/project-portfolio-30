@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # Credit to to the Code Institute "Malaria Detector" walkthrough project
 def page_project_hypothesis_body():
-    st.write("### Project Hypothesis and Validation")
+    st.header("Project Hypothesis and Validation")
 
     st.success(
         f"* I suspect that leaves affected by powdery mildew will show clear marks/signs. "

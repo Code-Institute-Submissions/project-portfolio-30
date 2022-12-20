@@ -12,13 +12,14 @@ from src.machine_learning.predictive_analysis import (
                                                     )
 
 def page_mildew_detector_body():
+    st.header(f"Mildew Detection")
     st.info(
         f"* The client is interested in telling whether a given leaf is infected with powdery mildew "
         f"or not."
         )
 
     st.write(
-        f"* You can download a set of healthy and powdery mildew cherry leaves for live prediction. "
+        f"You can download a set of healthy and powdery mildew cherry leaves for live prediction. "
         f"You can download the images from [here](https://www.kaggle.com/codeinstitute/cherry-leaves)."
         )
 
