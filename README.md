@@ -36,7 +36,7 @@ Powdery mildews usually have narrow host ranges comprising of just a few related
 * I want to display the difference between an average infected leaf and an average uninfected leaf.
 * I want to display an image montage for either infected, or uninfected leaves.
 
-#### Business Requirement 2: ML Tasks (Classification)
+#### Business Requirement 2: ML Task (Classification)
 * I want to predict if a given leaf is infected with mildew or is healthy.
 * I want to build an ML model that works as a binary classifier, and generate reports.
 
@@ -151,6 +151,26 @@ Please view the Github projects board [here](https://github.com/users/StephenB92
 
 ## Fixed Bugs
 * At an early stage of this project, the train and test datasets were included in the .gitignore file, however the validation set was not. This resulted in the "cherry-leaves" directory remaining in the workspace also. This was an issue as when the "run all" button is clicked on the Data Collection notebook, the process would stop and an error would be triggered once it reached the cell used to download the dataset. This is because a portion of the data to be downloaded already exists, along with it's directory. As this notebook needs to be run each time a workspace is opened, it is much more user friendly and efficient to just click the "run all" button, rather than each cell individually. Furthermore, as the validation set had already been committed to this projects repository, I was unable to remove it without altering the projects git commit history. Rather than altering the project commit history or requiring the "cherry-leaves" folder to be manually deleted each time the workspace is opened, a solution was created. I added a cell that imports shutil earlier in the notebook and then uses it to delete the "cherry-leaves" directory, before the full dataset is downloaded. Now, when a new workspace is opened and the run all button is clicked in the Data Collection, this notebook automatically runs in it's entirety with no errors.  
+
+## Project Testing
+
+### Dashboard - Manual Testing
+
+1. The project summary page displays information clearly and as intended. The link to the project README file works correctly. See dashboard screenshots above.
+
+2. The cherry leaf visualiser page loads the intended text and interactive checkbox buttons. This page answers business requirement 1. See dashboard screenshots above.
+
+	* Checkbox 1 - Difference between average and variability image. When clicked, the correct plots are displayed on the dashboard, along with the results of the visual analysis. See dashboard screenshots above.
+
+	* Checkbox 2 - Differences between average powdery mildew infected and average healthy leaves. When clicked, the correct plots are displayed on the dashboard, along with the results of the visual analysis. See dashboard screenshots above.
+
+	* Checkbox 3 - Image Montage. When clicked, a dropdown menu and "Create Montage" button appear. The dropdown menu works as intended, as well as the button. Then, the correct plots are displayed on the dashboard. See dashboard screenshots above.
+
+3. The mildew detection page loads the correct layout. The dataset download link works as intended. The user file uploader successfully loads .jpg and .png files and the correct predictions and reports are displaying as intended. The download report folder also works as intended and provides the user with a csv file report on the predictions. This page answers business requirement 1. See dashboard screenshots above.
+
+4. The project hypothesis and validation page displays information clearly and as intended. See dashboard screenshots above.
+
+5. The performance metrics page loads correctly. The page displays the relevant label frequency, model history and performance on test set metrics and demonstrate the classification models performance. See dashboard screenshots above.
 
 ## Deployment - Heroku
 
