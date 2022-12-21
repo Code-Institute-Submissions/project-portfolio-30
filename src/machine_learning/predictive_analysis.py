@@ -7,6 +7,8 @@ from PIL import Image
 from src.data_management import load_pkl_file
 
 # Credit to to the Code Institute "Malaria Detector" walkthrough project
+
+
 def plot_predictions_probabilities(pred_proba, pred_class):
     """
     Plot prediction probability results

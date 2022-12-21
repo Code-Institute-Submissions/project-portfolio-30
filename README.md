@@ -172,6 +172,14 @@ Please view the Github projects board [here](https://github.com/users/StephenB92
 
 5. The performance metrics page loads correctly. The page displays the relevant label frequency, model history and performance on test set metrics and demonstrate the classification models performance. See dashboard screenshots above.
 
+### Jupyter Notebooks
+
+* All three project notebooks run smoothly, produce expected results/outputs. No errors are returned.
+
+### Python Testing
+
+* All python files in the app_pages and src folders have been tested using the Code Institutes Python Linter (credit below). Each file passed with no major errors.
+
 ## Deployment - Heroku
 
 * The App live link is [here](https://project-portfolio-five.herokuapp.com/)
@@ -238,6 +246,7 @@ Please view the Github projects board [here](https://github.com/users/StephenB92
 * Credit to the [Tensorflow Documentation](https://www.tensorflow.org/?gclid=Cj0KCQiA14WdBhD8ARIsANao07jdpeMhBonZ05pNyzY8lp73O_ZirE4Ehlz_Qlhm-qeg1kbPabqLFmYaApokEALw_wcB).
 * Credit to the [Keras Documentation](https://keras.io/).
 * Credit to the [Streamlit Documentation](https://docs.streamlit.io/).
+* Credit to the [Code Institute Python Linter](https://pep8ci.herokuapp.com/#), which was used for python code validation.
 
 ### Content 
 * Credit to [RHS](https://www.rhs.org.uk/disease/powdery-mildews) and [Almanac](https://www.almanac.com/pest/powdery-mildew) for information on powdery mildew and how to identify it.

@@ -5,6 +5,8 @@ from matplotlib.image import imread
 from src.machine_learning.evaluate_clf import load_test_evaluation
 
 # Credit to to the Code Institute "Malaria Detector" walkthrough project
+
+
 def page_ml_performance_metrics():
     version = 'v1'
 
@@ -14,10 +16,9 @@ def page_ml_performance_metrics():
     st.image(labels_distribution, caption='Labels Distribution on Train, Validation and Test Sets')
     st.write("---")
 
-
     st.header("Model History")
     col1, col2 = st.beta_columns(2)
-    with col1: 
+    with col1:
         model_acc = plt.imread(f"outputs/{version}/model_training_acc.png")
         st.image(model_acc, caption='Model Training Accuracy')
     with col2:
@@ -27,3 +28,4 @@ def page_ml_performance_metrics():
 
     st.header("Generalised Performance on Test Set")
     st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
+    

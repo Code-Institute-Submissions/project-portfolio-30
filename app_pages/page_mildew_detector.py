@@ -11,6 +11,7 @@ from src.machine_learning.predictive_analysis import (
                                                     plot_predictions_probabilities
                                                     )
 
+
 def page_mildew_detector_body():
     st.header(f"Mildew Detection")
     st.info(
@@ -26,8 +27,8 @@ def page_mildew_detector_body():
     st.write("---")
 
     images_buffer = st.file_uploader('Upload cherry leaf images. You may select more than one.',
-                                        type=['jpg', 'png'], accept_multiple_files=True)
-   
+                                     type=['jpg', 'png'], accept_multiple_files=True)
+
     if images_buffer is not None:
         df_report = pd.DataFrame([])
         for image in images_buffer:
@@ -42,9 +43,9 @@ def page_mildew_detector_body():
             pred_proba, pred_class = load_model_and_predict(resized_img, version=version)
             plot_predictions_probabilities(pred_proba, pred_class)
 
-            df_report = df_report.append({"Name":image.name, 'Result': pred_class },
-                                        ignore_index=True)
-        
+            df_report = df_report.append({"Name":image.name, 'Result': pred_class},
+                                         ignore_index=True)
+
         if not df_report.empty:
             st.success("Analysis Report")
             st.table(df_report)
