@@ -42,6 +42,10 @@ def page_cherry_leaf_visualiser_body():
         st.image(diff_between_avgs, caption='Difference between average images')
 
     if st.checkbox("Image Montage"):
+      st.info(
+        f"* The image montage helps to quickly visualise differences between the classes. "
+        f"We note that leaves that contain mildew tend to have a white powdery pattern "
+        f"along the leaf. Whereas healthy leaves are light green.")
       st.write("* To refresh the montage, click on the 'Create Montage' button")
       my_data_dir = 'inputs/mildew_dataset/cherry-leaves'
       labels = os.listdir(my_data_dir + '/validation')
